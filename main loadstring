@@ -1,4 +1,59 @@
-getgenv().Key = "MARU-6UV6U-2GP6Z-RI8S-P5CCH-JG0L1"
-getgenv().id = "446029696212271162"
-getgenv().Script_Mode = "Kaitun_Script"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+script_key= "wYpVFMFyktUaChiGGkoojsYlHzAzgTYH"
+local defaultwebhook = "" -- Default Webhook if you don't want them separated
+local webhookMappings = {
+[7302908031] = "https://discord.com/api/webhooks/1311689419497144360/zwV_3ds4D1QbyU5NocTEziNsUnIcIViS9DifxIJ7YmpzwuxAQ8aZSMhEjEz7HMq2DMvi", 
+[7302905823] = "https://discord.com/api/webhooks/1311689597763321867/KVOsHwd5vuQYAHKzHmmRH-oF5st4PZ89ugm4z7Ij2-Xqmy209vkMBpbNrdo5p5ldpX7f",
+}
+Config = {
+     PetFarm = {
+        Enabled = true,            -- Master switch for pet farming
+        AutoNeon = true,          -- Makes neon pets when you have 4 full grown
+        AutoMegaNeon = true,      -- Makes mega neon when you have 4 neon
+        FarmUntilFullyGrown = false, -- true = farms youngest pets | false = oldest pets
+        PrioritizeFriendship = true, -- true = highest friendship pets | false = by age only
+        FarmEggs = true,           -- Farm eggs until they hatch then buys more
+        EggType = "garden_2024_egg",   -- cracked_egg, regular_pet_egg, royal_egg, garden_2024_egg
+        BuyEggs = true,           -- Auto buys eggs when needed
+        AutoAgeWithPotions = false, -- Uses potions on non-grown pets
+        AutoLure = false,          -- Places & uses lures automatically
+        RarityFarming = {
+            Enabled = false, -- enable for rarity farming on wor
+            Order = {
+                "legendary", -- highest priority 
+                "ultra_rare",
+                "rare",
+                "uncommon",
+                "common" -- lowest priority 
+            }
+        }
+    },
+    BabyFarm = {
+        Enabled = true, -- Toggles the whole baby farm on / off
+        Priority = "PetFirst" -- "BabyFirst", "PetFirst"    
+    },
+    Webhook = {
+        Enabled = true,
+        URL = nil, -- URL will be set dynamically based on user ID
+        LastBucks = nil,
+        StartTime = nil,
+        LastUpdate = nil,
+        IsSending = false 
+    },
+        FPSSaver = {
+        Enabled = true,           -- FPS boost mode
+        Disable3DRendering = true, -- Max performance
+        FPSCap = 5                -- FPS cap 
+    },
+    UI = {
+        Maximized = true,          -- true = big | false = small
+        Scale = 1                  -- 0.1 = tiny, 0.5 = half, 1 = full
+    }
+}
+local function getWebhookUrl()
+    local userId = localPlayer.UserId
+    return webhookMappings[userId] or defaultwebhook
+end
+
+-- Initialize settings
+Config.Webhook.URL = getWebhookUrl()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/8a2399ec22841391ee52540ec7c001e1.lua"))() --Adopt Me Potion Farm / Mass Farming
