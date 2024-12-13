@@ -1,16 +1,29 @@
 task.spawn(function()
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e4315db490a84e920190f83279c4732e.lua"))()
-end)
-
-spawn(function()
     task.wait(30)
-    for i = 1, 99 do
+    for i = 1,50 do task.wait()
         local args = {
             [1] = "gifts",
-            [2] = "winter_2024_ice_cube_tray",
-            [3] = {}
+            [2] = "winter_2024_ice_tray",
+            [3] = {
+                ["buy_count"] = 83
+            }
         }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("ShopAPI/BuyItem"):InvokeServer(unpack(args))
+    end
 
-        game:GetService("ReplicatedStorage").API:FindFirstChild("ShopAPI/BuyItem"):InvokeServer(unpack(args))
+    task.wait(1)
+    for i = 1,5 do
+        for i, v in pairs(require(game.ReplicatedStorage.ClientModules.Core.ClientData).get_data()[game.Players.LocalPlayer.Name].inventory.gifts) do task.wait()
+            if v.kind == "winter_2024_ice_tray" then
+                local args = {
+                    [1] = "winter_2024_ice_tray",
+                    [2] = v.unique
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("API"):WaitForChild("LootBoxAPI/ExchangeItemForReward"):InvokeServer(unpack(args))
+                print(v.unique)
+            end
+        end
     end
 end)
