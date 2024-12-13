@@ -6,7 +6,7 @@ spawn(function()
     task.wait(30)
     for i = 1, 99 do
         local args = {
-            [1] = "pets",
+            [1] = "gifts",
             [2] = "winter_2024_ice_cube_tray",
             [3] = {}
         }
