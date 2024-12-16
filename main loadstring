@@ -22,7 +22,7 @@ Config = {
         }
     },
     BabyFarm = {
-        Enabled = true,           -- Master switch for baby farming
+        Enabled = false,           -- Master switch for baby farming
         Priority = "PetFirst",    -- BabyFirst = do baby tasks first | PetFirst = do pet tasks first
     },
     Webhook = {
