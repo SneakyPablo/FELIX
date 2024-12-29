@@ -23,7 +23,7 @@ Config = {
     },
     BabyFarm = {
         Enabled = true,           -- Master switch for baby farming
-        Priority = "PetFirst",    -- BabyFirst = do baby tasks first | PetFirst = do pet tasks first
+        Priority = "BabyFirst",    -- BabyFirst = do baby tasks first | PetFirst = do pet tasks first
     },
     Webhook = {
         Enabled = false,            -- Enable Discord alerts
