@@ -11,7 +11,7 @@ Config = {
         AutoAgePotionEnabled = false,
         AutoAgePotionPets = {"winter_2024_berry_cool_cube"},
         RarityFarming = {
-            Enabled = false, -- enable for rarity farming on wor
+            Enabled = true, -- enable for rarity farming on wor
             Order = {
                 "legendary", -- highest priority 
                 "ultra_rare",
