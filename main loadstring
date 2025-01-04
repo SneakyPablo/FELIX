@@ -1,4 +1,3 @@
-game.RunService:Set3dRenderingEnabled (false)
 getgenv().Config = {
     AutoFarm = {
         FrostclawsRevenge = {
