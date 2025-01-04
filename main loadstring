@@ -8,10 +8,10 @@ getgenv().Config = {
             Enabled = false
         }
     },
-    Webhook = {
-        Enabled = false,
-        URL = "YOUR_DISCORD_WEBHOOK_URL_HERE",
-        Interval = 300  
+ FPSSaver = {
+        Enabled = true,           -- FPS boost mode
+        Disable3DRendering = true, -- Max performance
+        FPSCap = 5                -- FPS cap 
     }
 }
 script_key="wYpVFMFyktUaChiGGkoojsYlHzAzgTYH"
