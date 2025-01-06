@@ -1,17 +1,16 @@
-getgenv().Config = {
-    AutoFarm = {
-        FrostclawsRevenge = {
-            Enabled = true
-        },
-        Spleef = {
-            Enabled = false
+task.spawn(function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e4315db490a84e920190f83279c4732e.lua"))()
+end)
+
+spawn(function()
+    task.wait(30)
+    for i = 1, 99 do
+        local args = {
+            [1] = "pets",
+            [2] = "winter_2024_frostbite_cub",
+            [3] = {}
         }
-    },
- FPSSaver = {
-        Enabled = true,           -- FPS boost mode
-        Disable3DRendering = true, -- Max performance
-        FPSCap = 5                -- FPS cap 
-    }
-}
-script_key="wYpVFMFyktUaChiGGkoojsYlHzAzgTYH"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/138e2f78b57c8e78354ac45978d60113.lua"))()
+
+        game:GetService("ReplicatedStorage").API:FindFirstChild("ShopAPI/BuyItem"):InvokeServer(unpack(args))
+    end
+end)
