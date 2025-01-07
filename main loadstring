@@ -6,12 +6,6 @@ getgenv().Config = {
 ~        Spleef = {
 ~            Enabled = false
 ~        }
-~    },
-~ FPSSaver = {
-~        Enabled = true,           -- FPS boost mode
-~        Disable3DRendering = true, -- Max performance
-~        FPSCap = 5                -- FPS cap 
-~    }
 ~}
 ~script_key="wYpVFMFyktUaChiGGkoojsYlHzAzgTYH"
 ~loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/138e2f78b57c8e78354ac45978d60113.lua"))()
